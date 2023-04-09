@@ -1,4 +1,4 @@
-\chapter{Основные свойства решений скалярного уравнения Риккати} 
+\chapter{Уравнение Риккати, матричные уравнения Риккати, уравнения Риккати высших порядкой. Основные свойства решений скалярного уравнения Риккати} 
 
 \section{Существование и единственность решения задачи Коши.}
 Рассмотрим уравнение:
@@ -29,7 +29,7 @@ $$\dfrac{dy}{dx} = f \left( x, y \right),$$
 
 Действительно, всегда можно построить прямоугольник
 $$ R: \; \; \left| x - x_{0} \right| \leqslant a_{1}, \; \; \left| y - y_{0} \right| \leqslant b_{1}$$
-с центром в точке $\left( x_{0}, y_{0} \right),$ который целиком лежит в полосе \ref{eq:one_four}. В этом прямоугольнике правая часть уравнения Риккати \ref{eq:one_one} удовлетворяет обоим условиям теоремы Пикара. А тогда уравнение \ref{eq:one_one} имеет единственное решение \ref{eq:one_two}, удовлетворяющее начальному условию \ref{eq:one_three}. Это решение определено вообще говоря, лишь в некоторой окрестности точки $x = x_{0}.$ Существование этого решения во всем интервале непрерывности коэффициентов $P \left( x \right)$, $Q \left( x \right)$ и $R \left( x \right)$ не гарантируется.
+с центром в точке $\left( x_{0}, y_{0} \right),$ который целиком лежит в полосе $\left( \ref{eq:one_four} \right)$. В этом прямоугольнике правая часть уравнения Риккати $\left( \ref{eq:one_one} \right)$ удовлетворяет обоим условиям теоремы Пикара. А тогда уравнение $\left( \ref{eq:one_one} \right)$ имеет единственное решение $\left( \ref{eq:one_two} \right)$, удовлетворяющее начальному условию $\left( \ref{eq:one_three} \right)$. Это решение определено вообще говоря, лишь в некоторой окрестности точки $x = x_{0}.$ Существование этого решения во всем интервале непрерывности коэффициентов $P \left( x \right)$, $Q \left( x \right)$ и $R \left( x \right)$ не гарантируется.
 
 Пример. Рассмотрим уравнение
 $$y' = y^{2} - 2 y + 1.$$
@@ -40,8 +40,39 @@ $$y = 1 - \dfrac{1}{x - C}$$
 
 Из сказанного выше следует, что уравнение Риккати не имеет особых решений. Всякое решение его есть частное решение.
 
-%\section{Тут может быть заголовок 2.}%
+\section{Общие свойства уравнения Риккати.}%
+$1.$ Уравнение Риккати, так же, как и линейное уравнение, сохраняет свой вид при любом преобразовании независимой переменной
 
+\begin{equation}  \label{eq:one_five}
+    x = \varphi \left( t \right),
+\end{equation}
+где $\varphi \left( t \right)$ --- любая непрерывно-дифференцируемая функция, определенная в интервале $\left( t_{0}, t_{1} \right),$ причем $\varphi' \left( t \right) \neq 0$ в $\left( t_{0}, t_{1} \right).$
+
+Действительно, так как 
+$$\dfrac{dy}{dt} = \dfrac{dy}{dx} \varphi'\left( t \right),$$
+то преобразованное уравнение имеет вид:
+$$\dfrac{dy}{dt} = \left\{ P \left[\varphi\left( t \right) \right] y^{2} + Q \left[\varphi\left( t \right) \right] y + R\left[\varphi\left( t \right) \right] \right\} \phi' \left( t \right),$$
+т. е. является опять уравнением Риккати.
+
+$2.$ В отличие от линейного уравнения, уравнение Риккати сохраняет свой вид не только при любом линейном преобразовании искомой функции, но также и при любом дробно-линейном преобразовании
+\begin{equation}  \label{eq:one_six}
+    y = \dfrac{\alpha \left( x \right) z + \beta \left( x \right)}{\gamma \left( x \right) z + \delta \left( x \right),}
+\end{equation}
+где $\alpha \left( x \right), \beta \left( x \right), \gamma \left( x \right), \delta \left( x \right)$ ~--- произвольные функции, определенные и непрерывно дифференцируемые в интервале $\left( a, b \right)$, подчиненные лишь очевидному условию $\alpha \left( x \right) \delta \left( x \right) - \beta \left( x \right) \gamma \left( x \right).$
+
+В самом деле, дифференцируя $\left( \ref{eq:one_six} \right)$, находим:
+$$ 
+    y' = \dfrac{\left( \alpha'z + \alpha z' + \beta' \right) \left( \gamma z + \delta \right) - \left( \alpha z + \beta \right) \left( \gamma' z + \gamma z' + \delta \right)}{\left( \gamma z + \delta \right)^2} =
+$$
+\begin{equation}  \label{eq:one_seven}
+    = \dfrac{\left( \alpha \delta - \beta \gamma \right)z' + \left( \alpha' \gamma - \alpha \gamma' \right)z^{2} + \left( \alpha' \delta' + \beta' \gamma - \alpha \delta' - \beta \gamma' \right)z + \beta' \delta - \beta \delta'}{\left( \gamma z + \delta \right)^2},
+\end{equation}
+
+
+
+так что левая часть уравнения $\left( \ref{eq:one_one} \right)$ заменится дробью $ \left( \ref{eq:one_seven}. \right)$ Правая же часть уравнения $\left( \ref{eq:one_one} \right)$ после замены $y$ выражением $\left( \ref{eq:one_six} \right)$ и приведения к общему знаменателю обратится в дробь, числитель которой есть квадратичная функция от $z,$ а знаменатель --- тот же, что и у дроби $\left( \ref{eq:one_seven} \right)$. Поэтому преобразованное уравнение будет опять уравнением Риккати.
+
+Применяя то или иное из указанных преобразований, можно значительно упростить вид уравнения Риккати и, таким образом, облегчить его изучение.
 %\chapter{Определения  матричных уравнений Риккати и уравнений Риккати высших порядков}%
 %\section{Тут может быть заголовок 1.}%
 
